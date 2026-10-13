@@ -1,0 +1,5 @@
+[
+  {"id": "R1", "comment": "Use the tab names users actually see", "disposition": "changed"},
+  {"id": "R2", "comment": "Cover the audit log in the cabling topic", "disposition": "already_changed"},
+  {"id": "R3", "comment": "Add a section on cable pricing", "disposition": "ignored", "reason": "pricing is documented elsewhere"}
+]

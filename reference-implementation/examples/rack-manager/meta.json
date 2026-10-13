@@ -1,0 +1,17 @@
+{
+  "product": "RACK MANAGER (FICTIONAL DEMO PRODUCT)",
+  "release": "Aurora",
+  "author": "A. Writer",
+  "date": "2026-10-13",
+  "epic": "RACK-EPIC-14 Rack visibility and cabling",
+  "sprint": "Sprint 42",
+  "sme": "SME-1 (Rack team lead)",
+  "story_author": "Dev-1",
+  "completed_by": "Dev-1",
+  "scan_heading": "Section 1 — Website / DITA scan findings (Phase 5b)",
+  "changes_heading": "Section 2 — Changes required",
+  "file_column": "DITA file",
+  "instance_name": "RackDemo",
+  "id_column": "record id / file",
+  "screenshot_heading": "Screenshot evidence — populated tabs (seeded from test cases)"
+}

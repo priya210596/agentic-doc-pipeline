@@ -1,0 +1,156 @@
+{
+  "resources": [
+    {
+      "name": "ports",
+      "create_path": "/api/ports",
+      "delete_path": "/api/ports/{id}",
+      "list_path": "/api/ports",
+      "tag_field": "note",
+      "label_field": "port",
+      "records": [
+        {
+          "holder": "R-12",
+          "device": "sw-edge-01",
+          "port": "Eth1/1",
+          "speed": "10G",
+          "status": "Up"
+        },
+        {
+          "holder": "R-12",
+          "device": "sw-edge-01",
+          "port": "Eth1/2",
+          "speed": "10G",
+          "status": "Down"
+        },
+        {
+          "holder": "R-12",
+          "device": "srv-app-07",
+          "port": "NIC1",
+          "speed": "25G",
+          "status": "Up"
+        },
+        {
+          "holder": "C-03",
+          "device": "sw-core-02",
+          "port": "Eth2/1",
+          "speed": "40G",
+          "status": "Up"
+        },
+        {
+          "holder": "C-03",
+          "device": "srv-db-02",
+          "port": "NIC1",
+          "speed": "25G",
+          "status": "Up"
+        }
+      ]
+    },
+    {
+      "name": "connections",
+      "create_path": "/api/connections",
+      "delete_path": "/api/connections/{id}",
+      "list_path": "/api/connections",
+      "tag_field": "note",
+      "label_field": "from_port",
+      "records": [
+        {
+          "holder": "R-12",
+          "from_port": "sw-edge-01 Eth1/1",
+          "to_port": "srv-app-07 NIC1",
+          "cable": "Fibre",
+          "length": "3 m"
+        },
+        {
+          "holder": "R-12",
+          "from_port": "sw-edge-01 Eth1/2",
+          "to_port": "srv-db-02 NIC1",
+          "cable": "DAC",
+          "length": "1 m"
+        },
+        {
+          "holder": "C-03",
+          "from_port": "sw-core-02 Eth2/1",
+          "to_port": "srv-db-02 NIC1",
+          "cable": "Fibre",
+          "length": "2 m"
+        }
+      ]
+    }
+  ],
+  "observe": [
+    {
+      "topic": "Ports tab label",
+      "selector": "#tab-ports"
+    },
+    {
+      "topic": "Cabling tab label",
+      "selector": "#tab-cabling"
+    },
+    {
+      "topic": "Port columns",
+      "selector": "#ports thead th",
+      "join_all": true
+    },
+    {
+      "topic": "Cable type options",
+      "selector": "#cable-type option",
+      "join_all": true
+    },
+    {
+      "topic": "Edit connection action",
+      "selector": ".edit-btn"
+    }
+  ],
+  "shots": [
+    {
+      "file": "rack-ports",
+      "record": "Rack R-12",
+      "caption": "Rack: Ports tab (3 ports)",
+      "page": "/?kind=rack&holder=R-12",
+      "wait_selector": "#ports tbody tr",
+      "rows_selector": "#ports tbody tr",
+      "tab_selector": "#tab-ports",
+      "columns_selector": "#ports thead th",
+      "workspace_selector": "header",
+      "resource": "ports"
+    },
+    {
+      "file": "rack-cabling",
+      "record": "Rack R-12",
+      "caption": "Rack: Cabling tab (2 connections)",
+      "page": "/?kind=rack&holder=R-12",
+      "click": "#tab-cabling",
+      "wait_selector": "#cabling tbody tr .edit-btn",
+      "rows_selector": "#cabling tbody tr",
+      "tab_selector": "#tab-cabling",
+      "columns_selector": "#cabling thead th",
+      "workspace_selector": "header",
+      "resource": "connections"
+    },
+    {
+      "file": "cabinet-ports",
+      "record": "Cabinet C-03",
+      "caption": "Cabinet: Ports tab (2 ports)",
+      "page": "/?kind=cabinet&holder=C-03",
+      "wait_selector": "#ports tbody tr",
+      "rows_selector": "#ports tbody tr",
+      "tab_selector": "#tab-ports",
+      "columns_selector": "#ports thead th",
+      "workspace_selector": "header",
+      "resource": "ports"
+    },
+    {
+      "file": "cabinet-cabling",
+      "record": "Cabinet C-03",
+      "caption": "Cabinet: Cabling tab (1 connection)",
+      "page": "/?kind=cabinet&holder=C-03",
+      "click": "#tab-cabling",
+      "wait_selector": "#cabling tbody tr .edit-btn",
+      "rows_selector": "#cabling tbody tr",
+      "tab_selector": "#tab-cabling",
+      "columns_selector": "#cabling thead th",
+      "workspace_selector": "header",
+      "resource": "connections"
+    }
+  ]
+}

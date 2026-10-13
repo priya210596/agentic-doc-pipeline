@@ -1,0 +1,118 @@
+##### Run 1: review threads left unresolved, so the gate blocks #####
+== 1. Fetch (paste) ==
+RACK-210: RACK-210: Ports and cabling tabs for racks and cabinets
+  title                found
+  description          found
+  acceptance_criteria  found
+  linked_changes       MISSING (essential)
+  parent               MISSING
+  children             MISSING
+  discussion           MISSING
+  test_cases           MISSING
+
+== 2. Accuracy gate ==
+Rate the tracker data: 1 complete, 2 incomplete, 3 inaccurate, 4 pause. 1
+-> proceeding with tracker data
+
+== 3. Repo scan ==
+  ok   <repo>/examples/rack-manager/sample-repo (plain directory (no git history; changed_files unavailable))
+  files mentioning RACK-210: 2, of which tests: 1
+
+== 4. Environment check (seed, read the screen, screenshot, clean up) ==
+  seeded 8 records tagged DOC_SEED_RACK-210
+  read 5 facts from the live screen
+  captured rack-ports.png
+  captured rack-cabling.png
+  captured cabinet-ports.png
+  captured cabinet-cabling.png
+  removed 8/8 seeded records; leftovers: 0
+
+== 5. Findings and conflicts ==
+  CONFLICT on 'Ports tab label': repo says "Ports" but tracker says "Interfaces"
+  CONFLICT on 'Cabling tab label': repo says "Cabling" but tracker says "Links"
+  CONFLICT on 'Cable type options': repo says "Copper, Fibre, DAC" but tracker says "Copper, Fibre"
+  CONFLICT on 'Ports tab label': tracker says "Interfaces" but walkthrough says "Ports"
+  CONFLICT on 'Ports tab label': tracker says "Interfaces" but live says "Ports"
+  CONFLICT on 'Cabling tab label': tracker says "Links" but live says "Cabling"
+  CONFLICT on 'Cable type options': tracker says "Copper, Fibre" but live says "Copper, Fibre, DAC"
+  19 findings, 3 topics in conflict
+
+== 6. Reconcile ==
+  precedence: live > walkthrough > repo > tracker
+  docs scan: 4 findings, 0 scope mismatches
+
+== 7. Review gate (no silent skips) ==
+  BLOCKED thread R2: no disposition
+  BLOCKED thread R3: ignored without a reason
+Resolve the threads above, then re-run.
+
+##### Run 2: threads resolved, screens seeded and captured, Word doc written after confirmation #####
+== 1. Fetch (paste) ==
+RACK-210: RACK-210: Ports and cabling tabs for racks and cabinets
+  title                found
+  description          found
+  acceptance_criteria  found
+  linked_changes       MISSING (essential)
+  parent               MISSING
+  children             MISSING
+  discussion           MISSING
+  test_cases           MISSING
+
+== 2. Accuracy gate ==
+Rate the tracker data: 1 complete, 2 incomplete, 3 inaccurate, 4 pause. 1
+-> proceeding with tracker data
+
+== 3. Repo scan ==
+  ok   <repo>/examples/rack-manager/sample-repo (plain directory (no git history; changed_files unavailable))
+  files mentioning RACK-210: 2, of which tests: 1
+
+== 4. Environment check (seed, read the screen, screenshot, clean up) ==
+  seeded 8 records tagged DOC_SEED_RACK-210
+  read 5 facts from the live screen
+  captured rack-ports.png
+  captured rack-cabling.png
+  captured cabinet-ports.png
+  captured cabinet-cabling.png
+  removed 8/8 seeded records; leftovers: 0
+
+== 5. Findings and conflicts ==
+  CONFLICT on 'Ports tab label': repo says "Ports" but tracker says "Interfaces"
+  CONFLICT on 'Cabling tab label': repo says "Cabling" but tracker says "Links"
+  CONFLICT on 'Cable type options': repo says "Copper, Fibre, DAC" but tracker says "Copper, Fibre"
+  CONFLICT on 'Ports tab label': tracker says "Interfaces" but walkthrough says "Ports"
+  CONFLICT on 'Ports tab label': tracker says "Interfaces" but live says "Ports"
+  CONFLICT on 'Cabling tab label': tracker says "Links" but live says "Cabling"
+  CONFLICT on 'Cable type options': tracker says "Copper, Fibre" but live says "Copper, Fibre, DAC"
+  19 findings, 3 topics in conflict
+
+== 6. Reconcile ==
+  precedence: live > walkthrough > repo > tracker
+  docs scan: 4 findings, 0 scope mismatches
+
+== 7. Review gate (no silent skips) ==
+  3 review threads, all resolved
+
+== 8. Draft ==
+# RACK-210: Ports and cabling tabs for racks and cabinets
+
+- [NEEDS REVIEW] **Ports tab label:** Ports  _(source: live)_
+  - tracker said "Interfaces"; live outranks tracker in the declared order
+- [CONFIRMED] **Port columns:** Device, Port, Speed, Status  _(source: live)_
+- [NEEDS REVIEW] **Cabling tab label:** Cabling  _(source: live)_
+  - tracker said "Links"; live outranks tracker in the declared order
+- [NEEDS REVIEW] **Cable type options:** Copper, Fibre, DAC  _(source: live)_
+  - tracker said "Copper, Fibre"; live outranks tracker in the declared order
+- [CONFIRMED] **Edit connection action:** Edit connection  _(source: live)_
+- [NEEDS REVIEW] **Utilisation column:** Advanced plugin only  _(source: repo)_
+- [NEEDS REVIEW] **Max connections per port:** 1  _(source: repo)_
+
+## Review log
+
+- R1: Use the tab names users actually see -> changed
+- R2: Cover the audit log in the cabling topic -> already_changed
+- R3: Add a section on cable pricing -> ignored (pricing is documented elsewhere)
+
+Type 'write <repo>/examples/rack-manager/sample-output/RACK-210_RackManager_Review_Doc.docx' to write the file: write <repo>/examples/rack-manager/sample-output/RACK-210_RackManager_Review_Doc.docx
+Wrote <repo>/examples/rack-manager/sample-output/RACK-210_RackManager_Review_Doc.docx
+
+Word document: <repo>/examples/rack-manager/sample-output/RACK-210_RackManager_Review_Doc.docx

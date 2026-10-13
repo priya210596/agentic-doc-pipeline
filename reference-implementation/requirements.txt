@@ -1,0 +1,3 @@
+# Core package: standard library only (Python 3.9+). Nothing to install for fetch, reconcile, gates, docs scan, Word output.
+# Optional, for screenshot capture (the run still works without it; the document notes the capture failed):
+playwright>=1.40

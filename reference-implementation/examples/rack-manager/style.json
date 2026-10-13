@@ -1,0 +1,27 @@
+{
+  "spelling": {
+    "customise": "customize",
+    "utilisation": "utilization"
+  },
+  "banned_step_openers": [
+    "Navigate to",
+    "Go to"
+  ],
+  "max_rn_sentence_words": 28,
+  "serial_comma": true,
+  "heading_case": "sentence",
+  "ui_label_topics": [
+    [
+      "Ports tab label",
+      " tab"
+    ],
+    [
+      "Cabling tab label",
+      " tab"
+    ],
+    [
+      "Edit connection action",
+      ""
+    ]
+  ]
+}
